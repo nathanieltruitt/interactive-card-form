@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --clr-primary-100: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --clr-primary-200: hsl(0, 100%, 66%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(270, 3%, 87%);
+  --clr-neutral-300: hsl(279, 6%, 55%);
+  --clr-neutral-400: hsl(278, 68%, 11%);
+
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+input:focus,
+input:active {
+  border: 1px solid hsl(249, 99%, 64%) !important;
+  outline: none;
+}
+
+input:user-invalid {
+  border: 1px solid var(--clr-primary-200) !important;
+}
+
+.gradient-background {
+  width: 44.13%;
+  max-width: 445px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* the reason I am using a color instead of the image is due to screen sizes larger than the image itself */
+  background-image: url("images/bg-main-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cards {
+  position: relative;
+  top: 10.28rem;
+  left: 9.45rem;
+  max-width: 650px;
+}
+
+.card-front {
+  background-image: url("images/bg-card-front.png");
+  width: 445px;
+  height: 240px;
+  margin-bottom: 35px;
+  border-radius: 20px;
+  color: var(--clr-neutral-100);
+  box-shadow: 10px 15px 20px rgb(0, 0, 0, 0.2);
+}
+
+.spheres {
+  margin-bottom: 55px;
+}
+
+.sphere-1 {
+  position: relative;
+  top: 1.39em;
+  left: 1.67em;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: var(--clr-neutral-200);
+  border-radius: 50%;
+}
+
+.sphere-2 {
+  position: relative;
+  left: 5em;
+  bottom: 0.5em;
+  width: 1.39em;
+  height: 1.39em;
+  background: transparent;
+  border: 1px solid var(--clr-neutral-200);
+  border-radius: 50%;
+}
+
+#blank-card-number {
+  font-size: 1.8em;
+  word-spacing: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+#blank-name {
+  font-size: 0.8em;
+  float: left;
+  margin-left: 36px;
+}
+
+#blank-exp {
+  font-size: 0.8em;
+  float: right;
+  margin-right: 30px;
+}
+
+.card-back {
+  position: relative;
+  left: 100px;
+  background-image: url("images/bg-card-back.png");
+  width: 24.72rem;
+  height: 13.33rem;
+  border-radius: 20px;
+  box-shadow: 10px 15px 20px rgb(0, 0, 0, 0.2);
+}
+
+.sec-code {
+  position: absolute;
+  left: 355px;
+  top: 107px;
+  color: var(--clr-neutral-100);
+}
+
+.form-container {
+  position: relative;
+  left: 46.12rem;
+  bottom: 13.89rem;
+  height: 380px;
+  width: 330px;
+}
+
+.form-container form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.67rem;
+  margin-bottom: 10px;
+}
+.form-group input {
+  display: block;
+  width: 330px;
+  height: 40px;
+  border: 1px solid var(--clr-neutral-200);
+  border-radius: 6px;
+}
+
+.expiration-cvc,
+.mm-yy-group {
+  display: flex;
+}
+
+.expiration-cvc label {
+  font-size: 0.67rem;
+}
+
+.expiration {
+  width: 40%;
+}
+
+.mm-yy-group input {
+  width: 60px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--clr-neutral-200);
+}
+
+.cvc-group {
+  padding-top: 7px;
+  margin-left: 7px;
+}
+
+.cvc-group label {
+  margin-bottom: 2px;
+}
+
+.cvc-group label,
+.cvc-group input {
+  display: block;
+}
+
+.cvc-group input {
+  width: 190px;
+  height: 40px;
+  border: 1px solid var(--clr-neutral-200);
+  border-radius: 6px;
+}
+
+#confirm-btn {
+  width: 98%;
+  height: 52px;
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-100);
+  border: transparent;
+  border-radius: 6px;
+  margin-top: 25px;
+}
+
+.invalid-message {
+  font-size: 10px;
+  color: var(--clr-primary-200);
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .gradient-background {
+    width: 100%;
+    height: 240px;
+  }
+
+  .cards {
+    width: 340px;
+    height: 250px;
+    top: 32px;
+    left: 15px;
+  }
+
+  .card-front {
+    position: relative;
+    top: 95px;
+    background-size: cover;
+    width: 280px;
+    height: 155px;
+    z-index: 100;
+  }
+
+  .card-back {
+    background-size: cover;
+    width: 280px;
+    height: 155px;
+    left: 68px;
+    bottom: 190px;
+    z-index: 1;
+  }
+
+  .spheres {
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+
+  .card-front {
+    font-size: 14px;
+  }
+
+  #blank-card-number {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  #blank-name {
+    margin-left: 30px;
+  }
+
+  .form-container {
+    top: 88px;
+    left: 21px;
+  }
+
+  .sec-code {
+    left: 220px;
+    top: 67px;
+    font-size: 0.7em;
+  }
+}

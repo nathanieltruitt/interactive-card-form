@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="cards">
+      <div class="card-front">
+        <div class="spheres">
+          <div class="sphere-1"></div>
+          <div class="sphere-2"></div>
+        </div>
+        <span id="blank-card-number">0000 0000 0000 0000</span>
+        <span id="blank-name">JANE APPLESEED</span>
+        <span id="blank-exp">00/00</span>
+      </div>
+      <div class="card-back">
+        <div class="sec-code">
+          <span>000</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-container">
+      <form method="post">
+        <div class="cardholder-group form-group">
+          <label for="cardholder">CARDHOLDER NAME</label>
+          <input
+            id="cardholder"
+            name="cardholder"
+            type="text"
+            pattern="[a-zA-Z ]{2,}"
+            required
+          />
+        </div>
+        <div class="card-number-group form-group">
+          <label for="card-number">CARD NUMBER</label>
+          <input
+            id="card-number"
+            name="card-number"
+            type="text"
+            minlength="16"
+            maxlength="16"
+            pattern="[0-9]{16}"
+            required
+          />
+        </div>
+
+        <div class="expiration-cvc">
+          <div class="expiration">
+            <label for="month">EXP. DATE (MM / YY)</label>
+            <div class="mm-yy-group">
+              <input
+                id="month"
+                name="month"
+                type="number"
+                min="1"
+                max="12"
+                required
+              />
+              <input
+                id="year"
+                name="year"
+                type="number"
+                min="1900"
+                max="3000"
+                required
+              />
+            </div>
+          </div>
+          <div class="cvc-group">
+            <label for="cvc">CVC</label>
+            <input
+              id="cvc"
+              name="cvc"
+              type="number"
+              min="100"
+              max="999"
+              required
+            />
+          </div>
+        </div>
+        <button id="confirm-btn">Confirm</button>
+      </form>
+    </div>
+    <div class="gradient-background"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
